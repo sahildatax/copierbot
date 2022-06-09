@@ -1,6 +1,6 @@
 from pyrogram import Client, idle
 from pyrogram.errors import ApiIdInvalid, ApiIdPublishedFlood, AccessTokenInvalid
-import alive, config
+import config
 
 
 API_ID = config.API_ID
@@ -19,7 +19,6 @@ app = Client(
 
 if __name__ == "__main__":
     try:
-        alive.alive()
         app.start()
     except (ApiIdInvalid, ApiIdPublishedFlood):
         raise Exception("Your API_ID/API_HASH is not valid.")
