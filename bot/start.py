@@ -104,6 +104,11 @@ async def zipdata(client, message):
         await client.send_message(chat_id=message.chat.id,
                                   text=f'ERROR ❗')
 
+@Client.on_message(filters.command("dict"))
+async def senddicts(client, message):
+    await client.send_document(chat_id=message.chat.id, document=f"ongoing_dict.txt")
+
+
 
 @Client.on_message(filters.command("clear"))
 async def cleardicts(client, message):
