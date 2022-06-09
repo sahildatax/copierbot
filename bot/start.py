@@ -171,7 +171,7 @@ async def forward(client, message):
             MSG_DATA_LIST.append(NAME_ST)
             MSG_DATA_LIST_NAME.append(NAME_ST)
             await client.send_message(chat_id=TO_ID,
-                                      text=f'🔲 {NAME} 🔲')
+                                      text=f'🔲 {NAME}')
             FROM_ID = int(ongoing_dict[ongoing_dict_keys_list[i]][0])
             MSG_LIST = eval(ongoing_dict[ongoing_dict_keys_list[i]][1])
             MSG_TO_LIST = []
@@ -246,6 +246,7 @@ async def forward(client, message):
             BOT_DICT[BATCH_NAME].update(FOLDERX)
         await msgx.edit_text(
             f'✅Successfully Copied {str(TOTL_MESSAGES)} Messages\n\nFROM_FINAL_ID: https://t.me/c/{str(FROM_ID)[4:]}/{str(FIN_ID)}\n\nTO_FINAL_ID: https://t.me/c/{str(TO_ID)[4:]}/{idto}\n\nTime: {str(TIMEZ)}')
+        await client.send_message(chat_id=TO_ID, text=f'✅ {str(CALL_FROM.upper())}')
         limitx = 4000
         link_msg = ''
         final_msg_list = []
